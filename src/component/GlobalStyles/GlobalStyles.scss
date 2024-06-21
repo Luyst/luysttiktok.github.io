@@ -1,0 +1,24 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+:root {
+    $color-primary: #ff3b5c;
+    $color-backgound: #ff3b5c;
+}
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    height: 100dvh;
+}
