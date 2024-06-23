@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
 
 :root {
-    $color-primary: #ff3b5c;
-    $color-backgound: #ff3b5c;
+    --color-primary: #ff3b5c;
+
+    --color-backgound: #000;
+    --color-background-primary: #121212;
+    --color-background-primary2: #1b1b1b;
 }
 * {
     padding: 0px;
@@ -21,4 +24,22 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
     height: 100dvh;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+
+    height: 80px;
+    background-color: var(--color-background-primary);
 }

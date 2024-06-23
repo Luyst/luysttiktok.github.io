@@ -1,0 +1,22 @@
+.wrapper {
+    height: 100%;
+    width: 52px;
+    padding: 8px;
+    margin-left: -12px;
+    border-radius: 0px 90px 90px 0px;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.primary {
+    padding: 8px;
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-background-primary2);
+    border-radius: 8px;
+}
