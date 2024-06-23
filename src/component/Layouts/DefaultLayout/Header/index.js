@@ -5,7 +5,6 @@ import Button from '~/component/Button';
 const cx = classNames.bind(styles);
 
 function Header() {
-
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -14,30 +13,34 @@ function Header() {
                     <h3>TikTok</h3>
                 </div>
                 <div className={cx('center-container')}>
-                    <form className={cx('search-form')} action=''>
-                        <input type='text' name='search-input' id='search-input' placeholder='Tìm kiếm' className={cx('search-input')} />
+                    <form className={cx('search-form')} action="">
+                        <input
+                            type="text"
+                            name="search-input"
+                            id="search-input"
+                            placeholder="Tìm kiếm"
+                            className={cx('search-input')}
+                        />
                         <span className={cx('split')}></span>
-                        <button type='submit' className={cx('submit')}>
+                        <button type="submit" className={cx('submit')}>
                             <i className={cx('bx', 'bx-search')}></i>
                         </button>
                     </form>
                 </div>
                 <div className={cx('right-container')}>
                     <div className={cx('upload', 'item')}>
-                    <Button to='./upload' >
-                        <i className='bx bx-upload' ></i>
-                        <span >Tải lên</span>
-                    </Button>   
+                        <Button to="./">
+                            <i className="bx bx-upload"></i>
+                            <span>Tải lên</span>
+                        </Button>
                     </div>
-                    <div className={cx('message','item')}>
-                        <a href="/message">
-                        <i className={cx('bx bx-paper-plane')} ></i>
-                        </a>
+                    <div className={cx('message', 'item')}>
+                        <i className={cx('bx bx-paper-plane')}></i>
                     </div>
-                    <div className={cx('notification ','item')}>
-                    <i className={cx('bx bx-bell-minus')} ></i>
+                    <div className={cx('notification ', 'item')}>
+                        <i className={cx('bx bx-bell-minus')}></i>
                     </div>
-                    <div className={cx('avatar','item')}>
+                    <div className={cx('avatar', 'item')}>
                         <div className={cx('img')}></div>
                         <div className={cx('dropmenu')}>
                             <ul>
@@ -49,8 +52,6 @@ function Header() {
                                 <li>Đăng suất</li>
                             </ul>
                         </div>
-                        
-
                     </div>
                 </div>
             </div>

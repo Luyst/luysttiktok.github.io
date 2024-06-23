@@ -1,11 +1,20 @@
 .wrapper {
     position: sticky;
     top: 60px;
-    min-width: 240px;
+    width: 240px;
     background-color: var(--color-background-primary);
     color: #fff;
-    height: 100vh;
+    height: calc(100vh - 60px); // make sure the height in full viewheight
     padding-top: 20px;
+    overflow-y: auto;
+}
+.video-list {
+    padding-top: 26px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 40px;
 }
 
 .inner {
@@ -40,6 +49,7 @@
         font-size: 18px;
     }
 }
+
 .active {
     a {
         color: var(--color-primary);

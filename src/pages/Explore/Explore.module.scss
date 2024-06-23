@@ -1,0 +1,23 @@
+.wrapper {
+    position: sticky;
+    top: 60px;
+    width: calc(100dvw - 248px);
+    background-color: var(--color-background-primary);
+    color: #fff;
+    min-height: 100dvh;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-container {
+    .video-div {
+        video {
+            cursor: pointer;
+
+            height: 320px;
+            border-radius: 12px;
+            padding: 8px;
+        }
+    }
+}

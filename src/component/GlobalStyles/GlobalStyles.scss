@@ -1,6 +1,11 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+@import '~bootstrap/scss/bootstrap';
 
+$theme-colors: (
+    'info': tomato,
+    'danger': teal,
+);
 :root {
     --color-primary: #ff3b5c;
 
@@ -23,7 +28,6 @@ body {
     color: #fff;
     font-family: 'Open Sans', sans-serif;
     font-size: 1.6rem;
-    height: 100dvh;
 }
 ul {
     list-style: none;
@@ -39,7 +43,6 @@ a {
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 15px;
-
     height: 80px;
-    background-color: var(--color-background-primary);
+    background-color: var(--color-primary);
 }
