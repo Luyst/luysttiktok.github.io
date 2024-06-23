@@ -10,19 +10,17 @@
 
 .inner {
     padding: 0 8px 0 16px;
-}
+    li {
+        padding-left: 8px;
 
-li {
-    padding-left: 8px;
-
-    border-radius: 8px;
-    &:hover {
-        background-color: var(--color-background-primary2);
-        color: var(--color-primary);
+        border-radius: 8px;
+        &:hover {
+            background-color: var(--color-background-primary2);
+            color: var(--color-primary);
+        }
     }
 }
-
-a {
+.sidebar-items {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -40,5 +38,10 @@ a {
         font-weight: 600;
         line-height: 24px;
         font-size: 18px;
+    }
+}
+.active {
+    a {
+        color: var(--color-primary);
     }
 }
