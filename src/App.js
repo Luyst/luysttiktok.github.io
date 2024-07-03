@@ -6,9 +6,9 @@ import UserProvider from './context/UserProvider';
 function App() {
     return (
         <UserProvider>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <div className="App">
-                    <Routes basename={process.env.PUBLIC_URL}>
+                    <Routes>
                         {publicRoutes.map((route, index) => {
                             const Layout = route.layout || DefaultLayout;
                             const Page = route.component;
