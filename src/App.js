@@ -8,7 +8,7 @@ function App() {
         <UserProvider>
             <Router>
                 <div className="App">
-                    <Routes>
+                    <Routes basename={process.env.PUBLIC_URL}>
                         {publicRoutes.map((route, index) => {
                             const Layout = route.layout || DefaultLayout;
                             const Page = route.component;
