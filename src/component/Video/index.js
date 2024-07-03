@@ -56,7 +56,7 @@ function Video({ source, author, image, id, ...passProps }) {
     return (
         <div className={cx('media-container')}>
             <div className={cx('video-container')}>
-                <video ref={videoRef} loop preload="auto" className={cx('video-element')}>
+                <video ref={videoRef} loop preload="auto" className={cx('video-item')}>
                     <source src={source} type="video/mp4" />
                 </video>
                 <div className={cx('footer-video-container')}>
@@ -71,7 +71,9 @@ function Video({ source, author, image, id, ...passProps }) {
                     />
                 </div>
             </div>
-            <MenuAction image={image} />
+            <div className={cx('action-menu')}>
+                <MenuAction image={image} />
+            </div>
         </div>
     );
 }

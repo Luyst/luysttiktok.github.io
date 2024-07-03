@@ -1,0 +1,121 @@
+.wrapper {
+    position: sticky;
+    top: 60px;
+    width: 240px;
+    background-color: var(--color-background-primary);
+    color: #fff;
+    height: calc(100vh - 60px);
+    padding-top: 20px;
+}
+
+.inner {
+    padding: 0 8px 0 16px;
+    li {
+        padding-left: 8px;
+
+        border-radius: 8px;
+        &:hover {
+            background-color: var(--color-background-primary2);
+            color: var(--color-primary);
+        }
+    }
+    .item-container {
+        padding-bottom: 78px;
+        margin-bottom: 78px;
+        border-bottom: 2px solid #fff;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 100%;
+        height: 100%;
+        padding-left: 10px;
+        gap: 20px;
+
+        a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #fff;
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+.sidebar-items {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+
+    i {
+        font-size: 26px;
+        margin-right: 10px;
+    }
+
+    span {
+        font-weight: 600;
+        line-height: 24px;
+        font-size: 18px;
+    }
+}
+
+.active {
+    a {
+        color: var(--color-primary);
+    }
+}
+@media (max-width: 768px) {
+    .wrapper {
+        position: fixed;
+        top: calc(100dvh - 100px);
+        width: 100%;
+        background-color: var(--color-background-primary);
+        color: #fff;
+
+        z-index: 1000;
+    }
+    .inner {
+        width: 100%;
+        li {
+            padding-left: 8px;
+            border-radius: 8px;
+            &:hover {
+                background-color: var(--color-background-primary2);
+                color: var(--color-primary);
+            }
+        }
+    }
+    .item-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sidebar-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 2rem;
+        padding: 10px 0;
+        transition: color 0.3s ease;
+
+        i {
+            font-size: 4rem;
+            margin-right: 10px;
+        }
+
+        span {
+            display: none;
+        }
+    }
+    .footer-content {
+        display: none;
+    }
+}

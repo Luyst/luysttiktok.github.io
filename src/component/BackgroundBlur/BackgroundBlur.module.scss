@@ -1,0 +1,11 @@
+.video-background {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+    filter: blur(200px);
+    -webkit-filter: blur(200px);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

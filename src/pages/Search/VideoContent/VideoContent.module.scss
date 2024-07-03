@@ -1,0 +1,131 @@
+.video-div {
+    video {
+        cursor: pointer;
+        object-fit: cover;
+        width: 100%;
+        height: 320px;
+        border-radius: 20px;
+        padding: 4px;
+        transition: transform 0.3s, box-shadow 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.card-container {
+    background-color: transparent;
+    padding: 0;
+    color: var(--white);
+
+    .card-video {
+        position: relative;
+
+        .likeCount {
+            padding: 8px 16px;
+            bottom: 8px;
+            left: 8px;
+            position: absolute;
+            font-weight: 600;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            font-size: 1.4rem;
+
+            i {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        font-weight: 600;
+        font-size: 1.2rem;
+
+        p {
+            margin: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            color: var(--text-color);
+        }
+
+        a {
+            color: var(--text-color);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .avatar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+
+            img {
+                border-radius: 50%;
+                height: 32px;
+                width: 32px;
+                border: 2px solid var(--primary-color);
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            span {
+                max-width: 120px;
+                overflow: hidden;
+                word-break: break-all;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 1.2rem;
+                color: var(--text-secondary-color);
+            }
+        }
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+
+    .modal-content {
+        max-width: 90%;
+        max-height: 90%;
+
+        video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+    }
+}
+.content-container {
+    padding: 8px;
+    max-width: 1200px;
+}

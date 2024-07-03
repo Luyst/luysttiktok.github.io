@@ -1,0 +1,137 @@
+/* EditProfileModal.module.scss */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--color-background-primary);
+    color: #fff;
+    padding: 20px 0px;
+    border-radius: 8px;
+    height: 80%;
+    min-width: 700px;
+    max-width: 90%;
+    position: relative;
+
+    .modal-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--color-button-default);
+        h1 {
+            padding: 16px;
+            font-weight: 600;
+        }
+        .close-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 3.6rem;
+            padding-right: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .modal-body {
+        padding: 0px 20px;
+    }
+    .modal-footer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        border-top: 1px solid var(--color-button-default);
+        gap: 16px;
+        padding-top: 48px;
+        .button-container {
+            padding-right: 20px;
+            height: 100%;
+            .btn {
+                min-width: 80px;
+                padding: 6px 24px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                margin-left: 10px;
+            }
+
+            .btn-secondary {
+                background: #6c757d;
+                color: #fff;
+            }
+
+            .btn-primary {
+                background: var(--color-primary);
+                color: #fff;
+            }
+        }
+    }
+}
+.form-group {
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid var(--white) 0.5px;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px 0px;
+    .form-label {
+        display: block;
+        width: 200px;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .form-control {
+        width: calc(100% - 240px);
+        padding: 10px;
+        border: 0;
+        border-radius: 4px;
+        background: var(--color-button-default);
+        color: #fff;
+    }
+}
+.photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 124px;
+    position: relative;
+    img {
+        border-radius: 50%;
+        height: 96px;
+        width: 96px;
+        object-fit: cover;
+    }
+    .edit-photo {
+        cursor: pointer;
+        i {
+            position: absolute;
+            right: 0;
+            background-color: var(--color-button-default);
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 50%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        :hover {
+            background-color: var(--color-primary);
+        }
+    }
+}
+.bio {
+    border: 0;
+}
