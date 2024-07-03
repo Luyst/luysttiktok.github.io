@@ -2,6 +2,7 @@
     "name": "tiktok",
     "proxy": "https://www.pexels.com",
     "version": "0.1.0",
+    "homepage": "https://luyst.github.io/luysttiktok.github.io/",
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.17.0",
@@ -25,6 +26,7 @@
     "devDependencies": {
         "babel-plugin-module-resolver": "^5.0.2",
         "customize-cra": "^1.0.0",
+        "gh-pages": "^6.1.1",
         "react-app-rewired": "^2.2.1",
         "sass": "^1.77.6"
     },
@@ -32,7 +34,9 @@
         "start": "react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",
-        "eject": "react-app-rewired eject"
+        "eject": "react-app-rewired eject",
+        "predploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": [
