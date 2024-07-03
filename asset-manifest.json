@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/luysttiktok.github.io/static/css/main.31878360.css",
+    "main.js": "/luysttiktok.github.io/static/js/main.c28f8f9f.js",
+    "static/js/453.8be6ee1a.chunk.js": "/luysttiktok.github.io/static/js/453.8be6ee1a.chunk.js",
+    "index.html": "/luysttiktok.github.io/index.html",
+    "main.31878360.css.map": "/luysttiktok.github.io/static/css/main.31878360.css.map",
+    "main.c28f8f9f.js.map": "/luysttiktok.github.io/static/js/main.c28f8f9f.js.map",
+    "453.8be6ee1a.chunk.js.map": "/luysttiktok.github.io/static/js/453.8be6ee1a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31878360.css",
+    "static/js/main.c28f8f9f.js"
+  ]
+}
