@@ -6,7 +6,7 @@ import UserProvider from './context/UserProvider';
 function App() {
     return (
         <UserProvider>
-            <Router basename={process.env.PUBLIC_URL}>
+            <Router basename="/luysttiktok.github.io">
                 <div className="App">
                     <Routes>
                         {publicRoutes.map((route, index) => {
