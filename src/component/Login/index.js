@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import { auth } from '~/service/firebase';
 import { GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo } from 'firebase/auth';
 import styles from './Login.module.scss';
@@ -7,14 +7,13 @@ import classNames from 'classnames/bind';
 import { Typography } from 'antd';
 import Icons from '../Icons';
 import NewUserModal from './NewUserModal';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const Login = () => {
     const user = useContext(UserContext);
     const [isNewUser, setIsNewUser] = useState(false);
     const [newUser, setNewUser] = useState();
-    const navigate = useNavigate();
     const handleGoogleLogin = async () => {
         const provider = new GoogleAuthProvider();
         try {
@@ -27,20 +26,16 @@ const Login = () => {
                 setIsNewUser(true);
                 return;
             }
-            window.location.pathname = `/user`;
+            window.location.pathname = `/luysttiktok.github.io/user`;
         } catch (error) {
             console.error('Error logging in with Google:', error);
         }
     };
-
-    useEffect(() => {
-        if (user.user !== null) {
-            console.log(user);
-            alert('You have already signed in');
-            navigate('/');
-        }
-    }, [user, navigate]);
-    console.log(newUser);
+    if (user.user !== null) {
+        console.log(user);
+        alert('You have already signed in');
+        window.location.pathname = `/luysttiktok.github.io/`;
+    }
     const handleEmailLogin = async () => {
         alert('This method is not currently usable, please use a Google account ❤');
     };
@@ -56,10 +51,10 @@ const Login = () => {
     return (
         <div className={cx('wrapper')}>
             <header className={cx('header-container')}>
-                <a href="/" className={cx('left-container')}>
+                <Link to="/" className={cx('left-container')}>
                     <i className={cx(Icons.logo)}></i>
-                    <h3>TikTok</h3>
-                </a>
+                    <h3>LikTok</h3>
+                </Link>
                 <Typography.Title level={3} className={cx('title')}>
                     Made by Duc Huy
                 </Typography.Title>

@@ -26,7 +26,6 @@ const usePexel = (typeItem, typeSearch, query) => {
                 if (response !== items) {
                     setItems(typeItem === 'videos' ? response.data.videos : response.data.photos);
                     setLoading(false);
-                    console.log('here');
                 }
             } catch (error) {
                 console.error(`Error fetching ${typeItem} from Pexels`, error);
@@ -36,7 +35,6 @@ const usePexel = (typeItem, typeSearch, query) => {
         };
 
         fetchItems();
-        console.log(items, loading, typeItem);
         setActiveTab(typeItem);
     }, [typeItem, typeSearch, query]);
     return { items, loading, activeTab }; // Return the items and loading state

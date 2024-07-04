@@ -41,7 +41,7 @@ const Upload = () => {
 
     const handleUpload = () => {
         if (selectedFile) {
-            const storageRef = ref(storage, `videos/${user.uid}/${selectedFile.name}`);
+            const storageRef = ref(storage, `videos/${user.nameID}/${selectedFile.name}`);
             const uploadTask = uploadBytesResumable(storageRef, selectedFile);
 
             uploadTask.on(
@@ -59,7 +59,7 @@ const Upload = () => {
                     alert('Upload successful!');
 
                     addDocument('video', {
-                        uid: user.uid,
+                        nameID: user.nameID,
                         videoURL: downloadURL,
                         description: description,
                         like: 0,

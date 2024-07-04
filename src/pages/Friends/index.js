@@ -5,15 +5,14 @@ import styles from './Friends.module.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '~/context/UserProvider';
-import { useNavigate } from 'react-router-dom';
+
 const cx = classNames.bind(styles);
 
 function Friends() {
     const currentUser = useContext(UserContext);
     const [followList, setFollowList] = useState(currentUser.following);
     const [userList, setUserList] = useState([]);
-    const navigate = useNavigate();
-
+    console.log(followList);
     useEffect(() => {
         const fetchUserList = async () => {
             const users = await getUserList();
@@ -39,7 +38,7 @@ function Friends() {
     };
     if (currentUser.user === null) {
         alert('You must sign in first 💚');
-        navigate('/login');
+        window.location.pathname = `/luysttiktok.github.io/login`;
     }
     const handleUnFollow = async (e) => {
         const userUnFollow = e.target.name;
@@ -60,12 +59,7 @@ function Friends() {
             <Row lg={3} md={3} xs={1} className={cx('content-container')}>
                 {userList.map((user) => (
                     <Col key={user.id} className={cx('user-card')}>
-                        <Link
-                            to={'/user/' + user.nameID}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={cx('user-card')}
-                        >
+                        <Link to={'/user/' + user.nameID} className={cx('user-card')}>
                             <img className={cx('avatar-items')} src={user.photoURL} alt="avatar" />
                             <div className={cx('infor-container')}>
                                 <div className={cx('displayName-item')}>{user.displayName}</div>

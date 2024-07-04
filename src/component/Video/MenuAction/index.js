@@ -4,7 +4,7 @@ import Icons from '~/component/Icons';
 
 const cx = classNames.bind(styles);
 
-function MenuAction({ image }) {
+function MenuAction({ image, videoInfo }) {
     return (
         <menu className={cx('menu-action')}>
             <ul>
@@ -14,20 +14,20 @@ function MenuAction({ image }) {
                 </li>
                 <li>
                     <i className={cx(Icons.like)}></i>
-                    <p>900</p>
+                    <p>{videoInfo.like}</p>
                 </li>
 
                 <li>
                     <i className={cx(Icons.comment)}></i>
-                    <p>900</p>
+                    <p>{videoInfo.comment}</p>
                 </li>
                 <li>
                     <i className={cx(Icons.bookmark)}></i>
-                    <p>900</p>
+                    <p>{videoInfo.saved}</p>
                 </li>
                 <li>
                     <i className={cx(Icons.share)}></i>
-                    <p>900</p>
+                    <p>0</p>
                 </li>
             </ul>
         </menu>

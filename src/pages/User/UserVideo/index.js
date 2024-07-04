@@ -37,7 +37,7 @@ function UserVideo({ videos }) {
 
     return (
         <Container className={cx('content-container')}>
-            <Row md={3} lg={5} className={cx('video-grid')}>
+            <Row xs={3} lg={5} className={cx('video-grid')}>
                 {' '}
                 {videos.map((video, index) => (
                     <Col className={cx('video-div')} key={index}>

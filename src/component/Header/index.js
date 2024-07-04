@@ -8,6 +8,7 @@ import { UserContext } from '~/context/UserProvider';
 import { auth } from '~/service/firebase';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const cx = classNames.bind(styles);
 
@@ -70,7 +71,7 @@ function Header() {
 
     const submitClick = (value, event) => {
         if (event) event.preventDefault();
-        window.location.pathname = `search/${value}`;
+        window.location.pathname = `/luysttiktok.github.io/search/${value}`;
     };
     const handleSignOut = async () => {
         try {
@@ -88,7 +89,7 @@ function Header() {
                 <div className={cx('inner')}>
                     <Link to="/" className={cx('left-container')}>
                         <i className={cx(Icons.logo)}></i>
-                        <h3>TikTok</h3>
+                        <h3>LikTok</h3>
                     </Link>
                     <div className={cx('center-container')}>
                         <div className={cx('search-container')}>
@@ -142,12 +143,12 @@ function Header() {
                                     <img className={cx('img')} src={user.photoURL} alt="" />
                                     <div className={cx('dropmenu')}>
                                         <ul>
-                                            <li href="/user">Xem hồ sơ</li>
-                                            <li>Yêu thích</li>
-                                            <li>Cài đặt</li>
-                                            <li>Tiếng Việt</li>
-                                            <li>Phản hồi và trợ giúp</li>
-                                            <li onClick={handleSignOut}>Đăng xuất</li>
+                                            <li>
+                                                {' '}
+                                                <Link to="/user"> My profile</Link>
+                                            </li>
+
+                                            <li onClick={handleSignOut}>Sign out</li>
                                         </ul>
                                     </div>
                                 </div>

@@ -5,11 +5,20 @@ import Icons from '~/component/Icons';
 
 const cx = classNames.bind(styles);
 
-const FooterVideo = ({ isPlaying, handlePlayPause, handleTimelineChange, handleVolumeChange, volume, author }) => {
+const FooterVideo = ({
+    isPlaying,
+    handlePlayPause,
+    handleTimelineChange,
+    handleVolumeChange,
+    volume,
+    author,
+    description,
+}) => {
     return (
         <footer className={cx('video-footer')}>
             <div className={cx('video-decription')}>
-                <span>{author.name}</span>
+                <span>{author.nameID}</span>
+                <p>{description}</p>
                 <div className={cx('music-container')}>
                     <i className={cx(Icons.music)}></i>
                     <span>Music here!</span>

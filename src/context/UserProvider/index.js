@@ -43,6 +43,7 @@ function UserProvider({ children }) {
                 setFollowing(followingList);
             } else {
                 setFollowing(null);
+                localStorage.setItem('followings', JSON.stringify([]));
             }
         };
 
@@ -51,7 +52,9 @@ function UserProvider({ children }) {
                 if (!user || user.uid !== firebaseUser.uid) {
                     fetchUserData(firebaseUser.uid);
                 }
-                fetchFollowing(user.nameID);
+                if (user !== null) {
+                    fetchFollowing(user.nameID);
+                }
             } else {
                 setUser(null);
                 setFollowing(null);
@@ -62,7 +65,6 @@ function UserProvider({ children }) {
         return () => unsubscribe();
     }, [user]);
 
-    console.log(user);
     return <UserContext.Provider value={{ user, following }}>{children}</UserContext.Provider>;
 }
 

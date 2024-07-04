@@ -81,11 +81,12 @@
     .modal-content {
         max-width: 90%;
         max-height: 90%;
-
+        display: flex;
+        align-items: center;
         video {
-            width: 100%;
-            height: auto;
+            max-height: 760px;
             border-radius: 10px;
+            object-fit: contain;
         }
     }
 }

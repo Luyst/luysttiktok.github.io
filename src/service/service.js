@@ -100,24 +100,29 @@ export const queryForDocuments = async (collectionName, condition) => {
         return [];
     }
 };
-export const getVideosByUID = async (uid) => {
-    const condition = { fieldName: 'uid', operator: '==', compareValue: uid };
+export const getVideosByNameID = async (nameID) => {
+    const condition = { fieldName: 'nameID', operator: '==', compareValue: nameID };
     const videos = await queryForDocuments('video', condition);
     return videos;
 };
+export const getAllVideo = async () => {
+    const userList = await getUserList();
+    const listVideoPromises = userList.map((user) => getVideosByNameID(user.nameID));
 
+    const list = await Promise.all(listVideoPromises);
+    const listVideo = list.flat();
+
+    return listVideo;
+};
 export const getFollowing = async (nameID) => {
     const condition = { fieldName: 'userFollower', operator: '==', compareValue: nameID };
     const followings = await queryForDocuments('follow', condition);
 
     return followings;
 };
+
 export const delFollow = async (userFollower, userFollowing) => {
     try {
-        const conditions = [
-            { fieldName: 'userFollower', operator: '==', compareValue: userFollower },
-            { fieldName: 'userFollowings', operator: '==', compareValue: userFollowing },
-        ];
         const q = query(
             collection(db, 'follow'),
             where('userFollower', '==', userFollower),

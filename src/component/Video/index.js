@@ -3,15 +3,30 @@ import styles from './Video.module.scss';
 import React, { useRef, useState, useEffect } from 'react';
 import MenuAction from './MenuAction';
 import FooterVideo from './FooterVideo';
+import { getUserByNameID } from '~/service/service';
 const cx = classNames.bind(styles);
 
-function Video({ source, author, image, id, ...passProps }) {
+function Video({ videoInfo, id, ...passProps }) {
     const videoRef = useRef(null);
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(1);
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [author, setAuthor] = useState(null);
 
+    useEffect(() => {
+        const getUser = async () => {
+            try {
+                const userInfor = await getUserByNameID(videoInfo.nameID);
+                setAuthor(userInfor);
+            } catch (error) {
+                console.error('Failed to fetch user:', error);
+            }
+        };
+        console.log(author);
+
+        getUser();
+    }, [videoInfo]);
     const handlePlayPause = () => {
         if (videoRef.current.paused) {
             videoRef.current.play();
@@ -58,27 +73,29 @@ function Video({ source, author, image, id, ...passProps }) {
             }
         };
     }, []);
-
     return (
         <div className={cx('media-container')}>
             <div className={cx('video-container')}>
                 <video ref={videoRef} loop preload="auto" className={cx('video-item')}>
-                    <source src={source} type="video/mp4" />
+                    <source src={videoInfo.videoURL} type="video/mp4" />
                 </video>
                 <div className={cx('footer-video-container')}>
-                    <FooterVideo
-                        idVideo={id}
-                        author={author}
-                        isPlaying={isPlaying}
-                        handlePlayPause={handlePlayPause}
-                        handleTimelineChange={handleTimelineChange}
-                        handleVolumeChange={handleVolumeChange}
-                        volume={volume}
-                    />
+                    {author && (
+                        <FooterVideo
+                            idVideo={id}
+                            author={author}
+                            description={videoInfo.description}
+                            isPlaying={isPlaying}
+                            handlePlayPause={handlePlayPause}
+                            handleTimelineChange={handleTimelineChange}
+                            handleVolumeChange={handleVolumeChange}
+                            volume={volume}
+                        />
+                    )}
                 </div>
             </div>
             <div className={cx('action-menu')}>
-                <MenuAction image={image} />
+                {author && <MenuAction image={author.photoURL} videoInfo={videoInfo} />}
             </div>
         </div>
     );

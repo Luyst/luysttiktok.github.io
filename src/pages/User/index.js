@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { getUserByNameID, getVideosByUID, addDocument, delFollow } from '~/service/service';
+import { getUserByNameID, getVideosByNameID, addDocument, delFollow } from '~/service/service';
 
 import classNames from 'classnames/bind';
 import styles from './User.module.scss';
@@ -12,7 +12,7 @@ import Icons from '~/component/Icons';
 const cx = classNames.bind(styles);
 
 export default function User() {
-    const [tabStyle, setTabStyle] = useState({ tabPosition: '8px', tabWidth: '46px' });
+    const [tabStyle, setTabStyle] = useState({ tabPosition: '0px', tabWidth: '60px' });
     const [activeTab, setActiveTab] = useState('v1');
     const [videos, setVideos] = useState([]);
     const [showModal, setShowModal] = useState(false);
@@ -31,7 +31,6 @@ export default function User() {
                     console.error('Failed to fetch user:', error);
                 }
             };
-            console.log(query);
             getUser();
         } else {
             setUser(currentUser);
@@ -41,7 +40,7 @@ export default function User() {
         if (user && user.uid) {
             const fetchVideos = async () => {
                 try {
-                    const videoList = await getVideosByUID(user.uid);
+                    const videoList = await getVideosByNameID(user.nameID);
                     setVideos(videoList);
                 } catch (error) {
                     console.error('Failed to fetch videos:', error);
@@ -58,32 +57,32 @@ export default function User() {
     const hoverNav = (id) => {
         switch (id) {
             case 'v1':
-                setTabStyle({ tabPosition: '8px', tabWidth: '46px' });
+                setTabStyle({ tabPosition: '0px', tabWidth: '60px' });
                 break;
             case 'videos':
-                setTabStyle({ tabPosition: '142px', tabWidth: '42px' });
+                setTabStyle({ tabPosition: '130px', tabWidth: '80px' });
                 break;
             case 'collections':
-                setTabStyle({ tabPosition: '272px', tabWidth: '74px' });
+                setTabStyle({ tabPosition: '286px', tabWidth: '78px' });
                 break;
             default:
-                setTabStyle({ tabPosition: '8px', tabWidth: '46px' });
+                setTabStyle({ tabPosition: '0px', tabWidth: '60px' });
         }
     };
 
     const leaveNav = () => {
         switch (activeTab) {
             case 'v1':
-                setTabStyle({ tabPosition: '8px', tabWidth: '46px' });
+                setTabStyle({ tabPosition: '0px', tabWidth: '60px' });
                 break;
             case 'videos':
-                setTabStyle({ tabPosition: '142px', tabWidth: '42px' });
+                setTabStyle({ tabPosition: '130px', tabWidth: '80px' });
                 break;
             case 'collections':
-                setTabStyle({ tabPosition: '272px', tabWidth: '74px' });
+                setTabStyle({ tabPosition: '286px', tabWidth: '78px' });
                 break;
             default:
-                setTabStyle({ tabPosition: '8px', tabWidth: '46px' });
+                setTabStyle({ tabPosition: '0px', tabWidth: '60px' });
         }
     };
 
