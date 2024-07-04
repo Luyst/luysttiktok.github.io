@@ -100,17 +100,21 @@ export default function User() {
     };
     const handleFollow = async (e) => {
         const userFollowing = e.target.name;
-        try {
-            await addDocument('follow', {
-                userFollower: currentUser.nameID,
-                userFollowings: userFollowing,
-            });
-            let storeUser = JSON.parse(localStorage.getItem('followings'));
-            storeUser.push(userFollowing);
-            localStorage.setItem('followings', JSON.stringify(storeUser));
-            setFollowList([...followList, userFollowing]);
-        } catch (error) {
-            console.error(error);
+        if (currentUser === null) {
+            alert('You must sign in first 💚');
+        } else {
+            try {
+                await addDocument('follow', {
+                    userFollower: currentUser.nameID,
+                    userFollowings: userFollowing,
+                });
+                let storeUser = JSON.parse(localStorage.getItem('followings'));
+                storeUser.push(userFollowing);
+                localStorage.setItem('followings', JSON.stringify(storeUser));
+                setFollowList([...followList, userFollowing]);
+            } catch (error) {
+                console.error(error);
+            }
         }
     };
 

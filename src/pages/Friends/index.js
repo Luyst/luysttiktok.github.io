@@ -12,7 +12,6 @@ function Friends() {
     const currentUser = useContext(UserContext);
     const [followList, setFollowList] = useState(currentUser.following);
     const [userList, setUserList] = useState([]);
-    console.log(followList);
     useEffect(() => {
         const fetchUserList = async () => {
             const users = await getUserList();
@@ -23,23 +22,24 @@ function Friends() {
 
     const handleFollow = async (e) => {
         const userFollowing = e.target.name;
-        try {
-            await addDocument('follow', {
-                userFollower: currentUser.user.nameID,
-                userFollowings: userFollowing,
-            });
-            let storeUser = JSON.parse(localStorage.getItem('followings'));
-            storeUser.push(userFollowing);
-            localStorage.setItem('followings', JSON.stringify(storeUser));
-            setFollowList([...followList, userFollowing]);
-        } catch (error) {
-            console.error(error);
+        if (currentUser.user === null) {
+            alert('You must sign in first 💚');
+        } else {
+            try {
+                await addDocument('follow', {
+                    userFollower: currentUser.user.nameID,
+                    userFollowings: userFollowing,
+                });
+                let storeUser = JSON.parse(localStorage.getItem('followings'));
+                storeUser.push(userFollowing);
+                localStorage.setItem('followings', JSON.stringify(storeUser));
+                setFollowList([...followList, userFollowing]);
+            } catch (error) {
+                console.error(error);
+            }
         }
     };
-    if (currentUser.user === null) {
-        alert('You must sign in first 💚');
-        window.location.pathname = `/luysttiktok.github.io/login`;
-    }
+
     const handleUnFollow = async (e) => {
         const userUnFollow = e.target.name;
         try {
@@ -47,7 +47,6 @@ function Friends() {
             setFollowList(followList.filter((user) => user !== userUnFollow));
             let storeUser = JSON.parse(localStorage.getItem('followings'));
             storeUser = storeUser.filter((user) => user !== userUnFollow);
-            console.log(storeUser);
             localStorage.setItem('followings', JSON.stringify(storeUser));
         } catch (error) {
             console.error(error);
