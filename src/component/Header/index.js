@@ -7,6 +7,7 @@ import Icons from '~/component/Icons';
 import { UserContext } from '~/context/UserProvider';
 import { auth } from '~/service/firebase';
 import { signOut } from 'firebase/auth';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -85,10 +86,10 @@ function Header() {
         <>
             <header className={cx('wrapper')}>
                 <div className={cx('inner')}>
-                    <a href="/" className={cx('left-container')}>
+                    <Link to="/" className={cx('left-container')}>
                         <i className={cx(Icons.logo)}></i>
                         <h3>TikTok</h3>
-                    </a>
+                    </Link>
                     <div className={cx('center-container')}>
                         <div className={cx('search-container')}>
                             <form
@@ -126,10 +127,10 @@ function Header() {
                         {user ? (
                             <>
                                 <div className={cx('upload', 'item')}>
-                                    <a href="/upload">
+                                    <Link to="/upload">
                                         <i className="bx bx-upload"></i>
                                         <span>Tải lên</span>
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className={cx('message', 'item')}>
                                     <i className={cx('bx bx-paper-plane')}></i>
@@ -152,9 +153,9 @@ function Header() {
                                 </div>
                             </>
                         ) : (
-                            <a className={cx('login-button')} href="/login">
+                            <Link className={cx('login-button')} to="/login">
                                 Đăng Nhập
-                            </a>
+                            </Link>
                         )}
                     </div>
                 </div>

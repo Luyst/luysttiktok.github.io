@@ -5,14 +5,15 @@ import styles from './Friends.module.scss';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { UserContext } from '~/context/UserProvider';
-
+import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function Friends() {
     const currentUser = useContext(UserContext);
     const [followList, setFollowList] = useState(currentUser.following);
     const [userList, setUserList] = useState([]);
-    console.log(followList);
+    const navigate = useNavigate();
+
     useEffect(() => {
         const fetchUserList = async () => {
             const users = await getUserList();
@@ -38,7 +39,7 @@ function Friends() {
     };
     if (currentUser.user === null) {
         alert('You must sign in first 💚');
-        window.location.pathname = `/login`;
+        navigate('/login');
     }
     const handleUnFollow = async (e) => {
         const userUnFollow = e.target.name;

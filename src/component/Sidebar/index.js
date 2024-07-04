@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Typography } from 'antd';
 
 import styles from './Sidebar.module.scss';
@@ -22,10 +22,10 @@ const Sidebar = () => {
                         const liClasses = cx({ [styles.active]: isActive });
                         return (
                             <li key={index} className={liClasses}>
-                                <a className={cx('sidebar-items')} href={path}>
+                                <Link className={cx('sidebar-items')} to={path}>
                                     <i className={classes}></i>
                                     <span>{label}</span>
-                                </a>
+                                </Link>
                             </li>
                         );
                     })}

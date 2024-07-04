@@ -44,12 +44,18 @@ function Video({ source, author, image, id, ...passProps }) {
             setDuration(videoRef.current.duration);
         };
 
-        videoRef.current.addEventListener('loadedmetadata', updateDuration);
-        videoRef.current.addEventListener('timeupdate', handleTimeUpdate);
+        const currentVideo = videoRef.current;
+
+        if (currentVideo) {
+            currentVideo.addEventListener('loadedmetadata', updateDuration);
+            currentVideo.addEventListener('timeupdate', handleTimeUpdate);
+        }
 
         return () => {
-            videoRef.current.removeEventListener('loadedmetadata', updateDuration);
-            videoRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+            if (currentVideo) {
+                currentVideo.removeEventListener('loadedmetadata', updateDuration);
+                currentVideo.removeEventListener('timeupdate', handleTimeUpdate);
+            }
         };
     }, []);
 

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { auth } from '~/service/firebase';
 import { GoogleAuthProvider, signInWithPopup, getAdditionalUserInfo } from 'firebase/auth';
 import styles from './Login.module.scss';
@@ -7,12 +7,14 @@ import classNames from 'classnames/bind';
 import { Typography } from 'antd';
 import Icons from '../Icons';
 import NewUserModal from './NewUserModal';
+import { useNavigate } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 const Login = () => {
     const user = useContext(UserContext);
     const [isNewUser, setIsNewUser] = useState(false);
     const [newUser, setNewUser] = useState();
+    const navigate = useNavigate();
     const handleGoogleLogin = async () => {
         const provider = new GoogleAuthProvider();
         try {
@@ -30,11 +32,14 @@ const Login = () => {
             console.error('Error logging in with Google:', error);
         }
     };
-    if (user.user !== null) {
-        console.log(user);
-        alert('You have already signed in');
-        window.location.pathname = `/`;
-    }
+
+    useEffect(() => {
+        if (user.user !== null) {
+            console.log(user);
+            alert('You have already signed in');
+            navigate('/');
+        }
+    }, [user, navigate]);
     console.log(newUser);
     const handleEmailLogin = async () => {
         alert('This method is not currently usable, please use a Google account ❤');
