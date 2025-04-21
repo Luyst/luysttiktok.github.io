@@ -8,7 +8,6 @@ import { UserContext } from '~/context/UserProvider';
 import { auth } from '~/service/firebase';
 import { signOut } from 'firebase/auth';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 
 const cx = classNames.bind(styles);
 

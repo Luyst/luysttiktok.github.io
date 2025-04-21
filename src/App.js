@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { publicRoutes } from '~/routes';
 import { DefaultLayout } from '~/component/Layouts';
 import UserProvider from './context/UserProvider';
@@ -6,7 +6,7 @@ import UserProvider from './context/UserProvider';
 function App() {
     return (
         <UserProvider>
-            <Router basename="/luysttiktok.github.io">
+            <Router>
                 <div className="App">
                     <Routes>
                         {publicRoutes.map((route, index) => {

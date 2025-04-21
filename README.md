@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# LikTok 🎵 - TikTok UI Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+LikTok là một dự án cá nhân được xây dựng nhằm rèn luyện kỹ năng HTML, CSS, JavaScript và ReactJS. Dự án mô phỏng lại giao diện và một số chức năng cơ bản của TikTok, như đăng nhập, xem video, tìm kiếm và tương tác với nội dung.
 
-## Available Scripts
+## 🔗 Demo
 
-In the project directory, you can run:
+Truy cập bản demo tại đây: [https://luysttiktok.github.io](https://luysttiktok.github.io)
 
-### `npm start`
+## ✨ Tính năng chính
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-   🔐 Đăng nhập bằng Google thông qua Firebase Authentication
+-   📺 Xem video dạng scroll dọc tương tự TikTok
+-   🔍 Tìm kiếm video và hình ảnh (sử dụng Pexels API)
+-   👥 Xem danh sách bạn bè và người theo dõi
+-   📄 Upload video (cơ bản)
+-   📝 Trang cá nhân với chức năng chỉnh sửa thông tin
+-   👤 Người dùng có thể chỉnh sửa avatar, tên và ID trên trang cá nhân
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠 Công nghệ sử dụng
 
-### `npm test`
+-   ReactJS
+-   Firebase (Authentication, Firestore)
+-   Pexels API
+-   SCSS + CSS custom properties
+-   React Bootstrap
+-   React Router DOM
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📁 Cài đặt và chạy dự án
 
-### `npm run build`
+```bash
+# Clone repo
+git clone https://github.com/Luyst/luysttiktok.github.io.git
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Cài đặt dependencies
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Chạy ứng dụng
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 Triển khai
 
-### `npm run eject`
+Dự án được triển khai trên GitHub Pages.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🧐 Bài học & Trải nghiệm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-   Nâng cao kỹ năng ReactJS và quản lý trạng thái
+-   Làm quen với API bên ngoài (Pexels) và Firebase
+-   Hiểu hơn về cấu trúc component, props, state, routing
+-   Thực hành responsive design với React Bootstrap
+-   ✨ **Là dự án ReactJS đầu tiên, giúc mình tự tin hơn khi làm các dự án thực tế**
+-   🧳 Rèn luyện khả năng làm việc độc lập và giải quyết lỗi phát sinh trong quá trình phát triển
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📬 Liên hệ
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Tác giả: **Nguyen Luong Duc Huy**
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   Email: dhuy15072003@gmail.com
+-   LinkedIn: [https://www.linkedin.com/in/%C4%91%E1%BB%A9c-huy-6b7257319/](https://www.linkedin.com/in/%C4%91%E1%BB%A9c-huy-6b7257319/)

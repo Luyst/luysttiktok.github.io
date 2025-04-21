@@ -32,7 +32,6 @@ const Login = () => {
         }
     };
     if (user.user !== null) {
-        console.log(user);
         alert('You have already signed in');
         window.location.pathname = `/luysttiktok.github.io/`;
     }

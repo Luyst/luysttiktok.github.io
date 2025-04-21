@@ -23,7 +23,6 @@ function Video({ videoInfo, id, ...passProps }) {
                 console.error('Failed to fetch user:', error);
             }
         };
-        console.log(author);
 
         getUser();
     }, [videoInfo]);

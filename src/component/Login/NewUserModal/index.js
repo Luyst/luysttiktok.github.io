@@ -21,7 +21,7 @@ const NewUserModal = ({ newUser }) => {
                 following: 0,
             });
             alert('Sign in success!');
-            window.location.pathname = '/user';
+            window.location.pathname = '/luysttiktok.github.io/user';
         } catch (error) {
             console.error(error);
         }
